@@ -6,13 +6,15 @@ import time
 import unidecode
 
 
+username = 'user'
+password = 'password'
+
 app = Flask(__name__)
 ask = Ask(app, "/reddit_reader")
-username = 'user'
 
 def get_headlines():
     user_pass_dict = {'user': username,
-                      'password': 'password',
+                      'password': password,
                       'api_type': 'json'}
     sess = requests.Session()
     sess.headers.update({'User-Agent': 'I am testing Alexa: ' + username})
